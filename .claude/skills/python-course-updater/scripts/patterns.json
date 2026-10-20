@@ -1,0 +1,166 @@
+{
+  "_help": "Deprecated/removed/legacy patterns the scanner looks for. Add a new entry whenever you learn something is deprecated. status: removed | deprecated | legacy | misleading. 'regex' runs on each cell's source. Lessons may legitimately MENTION these inside a ⚠️/legacy callout; the scanner separates annotated hits from unannotated ones.",
+  "patterns": [
+    {
+      "id": "utcnow",
+      "regex": "datetime\\.utcnow\\(|utcfromtimestamp\\(",
+      "status": "deprecated",
+      "since": "3.12",
+      "use": "datetime.now(UTC) / fromtimestamp(ts, UTC)"
+    },
+    {
+      "id": "typing-aliases",
+      "regex": "from typing import[^\\n]*\\b(List|Dict|Tuple|Set|FrozenSet)\\b",
+      "status": "legacy",
+      "since": "3.9",
+      "use": "list[int], dict[str, int], tuple[...], set[...]"
+    },
+    {
+      "id": "typing-optional-union",
+      "regex": "\\b(Optional|Union)\\[",
+      "status": "legacy",
+      "since": "3.10",
+      "use": "X | None, X | Y"
+    },
+    {
+      "id": "distutils",
+      "regex": "\\b(import|from) distutils\\b",
+      "status": "removed",
+      "since": "3.12",
+      "use": "setuptools / pyproject.toml"
+    },
+    {
+      "id": "removed-stdlib",
+      "regex": "\\b(import|from) (imp|asynchat|asyncore|smtpd|cgi|cgitb|telnetlib|imghdr|pipes|crypt|nntplib|uu|xdrlib|lib2to3|audioop|sndhdr|sunau|aifc|chunk|mailcap|msilib|nis|ossaudiodev|spwd)\\b",
+      "status": "removed",
+      "since": "3.12/3.13",
+      "use": "see Module 17 deprecation reference"
+    },
+    {
+      "id": "pypdf2",
+      "regex": "PyPDF2|PdfFileReader|PdfFileWriter|getNumPages",
+      "status": "deprecated",
+      "since": "2023",
+      "use": "pypdf (PdfReader/PdfWriter)"
+    },
+    {
+      "id": "pil-antialias",
+      "regex": "Image\\.(ANTIALIAS|LINEAR|CUBIC)\\b",
+      "status": "removed",
+      "since": "Pillow 10",
+      "use": "Image.Resampling.LANCZOS etc."
+    },
+    {
+      "id": "setup-py-install",
+      "regex": "setup\\.py (install|develop|sdist|bdist_wheel|upload|register)",
+      "status": "deprecated",
+      "since": "2019+",
+      "use": "pip install . / python -m build / twine / uv"
+    },
+    {
+      "id": "pydantic-v1-api",
+      "regex": "\\.parse_obj\\(|\\.parse_raw\\(|\\.from_orm\\(|orm_mode|@root_validator|@validator\\(|class Config:\\s*\\n\\s+(orm_mode|allow_population_by_field_name|anystr_strip_whitespace|extra|arbitrary_types_allowed|validate_assignment|json_encoders|schema_extra|allow_mutation)|\\.update_forward_refs\\(",
+      "status": "deprecated",
+      "since": "Pydantic 2.0",
+      "use": "model_validate / model_validate_json / from_attributes / field_validator / model_validator / ConfigDict"
+    },
+    {
+      "id": "pydantic-basesettings",
+      "regex": "from pydantic import[^\\n]*BaseSettings",
+      "status": "removed",
+      "since": "Pydantic 2.0",
+      "use": "from pydantic_settings import BaseSettings"
+    },
+    {
+      "id": "poetry-shell-export",
+      "regex": "poetry (shell|export)\\b|poetry lock --no-update|poetry install --sync",
+      "status": "deprecated",
+      "since": "Poetry 2.0",
+      "use": "poetry env activate / plugins / poetry sync"
+    },
+    {
+      "id": "uv-index-url",
+      "regex": "--index-url|--extra-index-url",
+      "status": "deprecated",
+      "since": "uv 0.4+",
+      "use": "--default-index / --index"
+    },
+    {
+      "id": "pdb-set-trace",
+      "regex": "pdb\\.set_trace\\(\\)",
+      "status": "legacy",
+      "since": "3.7",
+      "use": "breakpoint()"
+    },
+    {
+      "id": "get-event-loop",
+      "regex": "asyncio\\.get_event_loop\\(\\)",
+      "status": "deprecated",
+      "since": "3.12 (error in 3.14)",
+      "use": "asyncio.run() / get_running_loop()"
+    },
+    {
+      "id": "unittest-aliases",
+      "regex": "\\.(assertEquals|assertNotEquals|failUnless|assertRegexpMatches|assertItemsEqual)\\(",
+      "status": "removed",
+      "since": "3.12",
+      "use": "assertEqual / assertRegex / assertCountEqual"
+    },
+    {
+      "id": "namedtuple-kwargs",
+      "regex": "NamedTuple\\([\"'][A-Za-z_]+[\"'],\\s*[A-Za-z_]+\\s*=",
+      "status": "removed",
+      "since": "3.15",
+      "use": "class syntax or list of (name, type) tuples"
+    },
+    {
+      "id": "pkg-resources",
+      "regex": "\\b(import|from) pkg_resources\\b",
+      "status": "deprecated",
+      "since": "setuptools 80+",
+      "use": "importlib.metadata / importlib.resources"
+    },
+    {
+      "id": "os-system",
+      "regex": "\\bos\\.(system|popen)\\(",
+      "status": "legacy",
+      "since": "3.x",
+      "use": "subprocess.run([...], check=True)"
+    },
+    {
+      "id": "percent-format",
+      "regex": "[\"'][^\"'\\n]*%[sdrf][^\"'\\n]*[\"']\\s*%\\s*[\\(\\w]",
+      "status": "legacy",
+      "since": "3.6",
+      "use": "f-strings"
+    },
+    {
+      "id": "time-time-timing",
+      "regex": "time\\.time\\(\\)\\s*-|start\\s*=\\s*time\\.time\\(\\)",
+      "status": "legacy",
+      "since": "3.3",
+      "use": "time.perf_counter()"
+    },
+    {
+      "id": "tz-pytz",
+      "regex": "\\bimport pytz\\b|from pytz import",
+      "status": "legacy",
+      "since": "3.9",
+      "use": "zoneinfo"
+    },
+    {
+      "id": "locale-default",
+      "regex": "locale\\.getdefaultlocale\\(",
+      "status": "deprecated",
+      "since": "3.11",
+      "use": "locale.getlocale() / getencoding()"
+    },
+    {
+      "id": "re-match-3-15",
+      "regex": "\\bre\\.match\\(",
+      "status": "legacy",
+      "since": "3.15 (soft)",
+      "use": "re.prefixmatch() (match still works)"
+    }
+  ]
+}

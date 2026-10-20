@@ -1,0 +1,8 @@
+.DS_Store
+# tooling environment created by the python-course-updater skill
+.course-tools/
+# website build output and dependencies
+Python-Mastery-Website/node_modules/
+Python-Mastery-Website/dist/
+Python-Mastery-Website/public/content/
+scheduled_tasks.lock

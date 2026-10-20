@@ -1,0 +1,28 @@
+{
+  "_help": "Maintained by the python-course-updater skill. Records what the course was last verified against, so the next update only has to cover what changed since.",
+  "reviewed_on": "2026-10-20",
+  "python": { "version": "3.15.0", "released": "2026-10-09", "supported_floor": "3.12" },
+  "packages": {
+    "uv": "0.13.3",
+    "poetry": "2.5.1",
+    "pydantic": "2.14.1",
+    "pydantic-settings": "2.16.0",
+    "fastapi": "0.151.0",
+    "sqlalchemy": "2.1.5",
+    "pytest": "9.1.1",
+    "ruff": "0.17.1",
+    "mypy": "2.4.0",
+    "hypothesis": "6.170.5",
+    "requests": "2.34.2",
+    "httpx": "0.28.1",
+    "pillow": "13.0.0",
+    "pypdf": "6.21.1",
+    "openpyxl": "3.1.5",
+    "numpy": "2.5.4",
+    "build": "1.6.1",
+    "twine": "7.0.0",
+    "hatchling": "1.32.4",
+    "setuptools": "84.2.0"
+  },
+  "changelog": "CHANGELOG.md"
+}
