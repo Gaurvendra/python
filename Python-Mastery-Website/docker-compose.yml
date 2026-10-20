@@ -1,0 +1,20 @@
+# Usage (run from this folder):
+#   docker compose up --build        # build and start
+#   open http://localhost:8080
+#   docker compose down              # stop
+services:
+  web:
+    build:
+      context: ..                    # parent folder, so ../Python-Mastery-Course is included
+      dockerfile: Python-Mastery-Website/Dockerfile
+    image: python-mastery-website:latest
+    ports:
+      - "8082:8080"
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp
+      - /var/cache/nginx
+      - /var/run
+    security_opt:
+      - no-new-privileges:true

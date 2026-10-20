@@ -1,0 +1,11 @@
+# Only the website source and the course notebooks go into the build.
+**
+!Python-Mastery-Website/
+!Python-Mastery-Course/
+Python-Mastery-Website/node_modules
+Python-Mastery-Website/dist
+Python-Mastery-Website/public/content
+Python-Mastery-Website/.git
+**/.DS_Store
+**/.ipynb_checkpoints
+**/__pycache__
