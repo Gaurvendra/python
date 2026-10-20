@@ -7,6 +7,19 @@
   <title>Python Mastery</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐍</text></svg>" />
   <script>
+    // Hosts that serve the app from the domain root (Vercel, Netlify...) may hand us index.html for a
+    // nested path such as /02-python-basics. Relative asset URLs would then 404, so go back to the root,
+    // keeping any #/lesson hash. Does nothing for file:// or when hosted in a sub-folder (e.g. GitHub Pages).
+    (function () {
+      var p = location.pathname;
+      var root = /\.(vercel\.app|netlify\.app|pages\.dev)$/.test(location.hostname) || location.port === "";
+      if (root && /^https?:$/.test(location.protocol) && p !== "/" && !/\/$/.test(p) && !/\/index\.html$/.test(p) && !/github\.io$/.test(location.hostname)) {
+        var slug = p.replace(/^\/+|\/+$/g, "");
+        location.replace("/" + (location.hash || (slug ? "#/" + slug : "")));
+      }
+    })();
+  </script>
+  <script>
     // Apply saved theme before paint to avoid a flash.
     try { document.documentElement.dataset.theme = localStorage.getItem("pm-theme") || "light"; } catch (e) {}
   </script>
