@@ -13,7 +13,7 @@ npm run build      # produces dist/ — a fully static site
 npm run preview    # serve dist/ locally
 ```
 
-`npm run build` first renders every `.ipynb` in `../Python-Mastery-Course`
+`npm run build` first renders every `.ipynb` in `./Python-Mastery-Course`
 into `public/content/*.html` (markdown, code, outputs, images, errors) and an
 `index.json` table of contents. To use another location:
 `COURSE_DIR=/path/to/notebooks npm run build`.

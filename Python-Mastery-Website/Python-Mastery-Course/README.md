@@ -2,8 +2,8 @@
 
 A complete, structured Python course in Jupyter notebooks. It's the **union** of:
 
-- 📗 **Complete Python 3 Bootcamp** (Pierian Data notebooks), in `../Complete-Python-3-Bootcamp-master/`
-- 📘 **Python Handbook** (PDF), `../python-handbook.pdf`
+- 📗 **Complete Python 3 Bootcamp** (Pierian Data notebooks), in `../../Complete-Python-3-Bootcamp-master/`
+- 📘 **Python Handbook** (PDF), `../../python-handbook.pdf`
 
 All content from both sources is included and reorganised into one syllabus. Outdated and deprecated material is flagged and fixed, and modern topics missing from both are added, up to advanced level: internals & metaprogramming, advanced typing, the full packaging toolchain (pyproject.toml, uv, Poetry, wheels, twine), deep concurrency & asyncio, advanced testing & CI, SQLAlchemy, Pydantic & FastAPI, and Python 3.10–3.15 features.
 

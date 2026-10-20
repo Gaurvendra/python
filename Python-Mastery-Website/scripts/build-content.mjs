@@ -7,7 +7,7 @@ import { Marked } from "marked";
 import hljs from "highlight.js/lib/common";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const COURSE = path.resolve(process.env.COURSE_DIR || path.join(here, "../../Python-Mastery-Course"));
+const COURSE = path.resolve(process.env.COURSE_DIR || path.join(here, "../Python-Mastery-Course"));
 const OUT = path.join(here, "../public/content");
 
 const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");

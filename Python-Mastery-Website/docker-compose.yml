@@ -5,8 +5,8 @@
 services:
   web:
     build:
-      context: ..                    # parent folder, so ../Python-Mastery-Course is included
-      dockerfile: Python-Mastery-Website/Dockerfile
+      context: .                     # this folder; the course is ./Python-Mastery-Course
+      dockerfile: Dockerfile
     image: python-mastery-website:latest
     ports:
       - "8082:8080"

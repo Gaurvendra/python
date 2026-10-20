@@ -1,11 +1,10 @@
-# Only the website source and the course notebooks go into the build.
-**
-!Python-Mastery-Website/
-!Python-Mastery-Course/
-Python-Mastery-Website/node_modules
-Python-Mastery-Website/dist
-Python-Mastery-Website/public/content
-Python-Mastery-Website/.git
+node_modules
+dist
+public/content
+.git
+.gitignore
+README.md
+docker-compose.yml
 **/.DS_Store
 **/.ipynb_checkpoints
 **/__pycache__
