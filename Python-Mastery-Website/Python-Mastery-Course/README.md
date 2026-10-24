@@ -19,7 +19,7 @@ All content from both sources is included and reorganised into one syllabus. Out
 | 03 | Data Structures (incl. heaps, bisect, graphs) | 7 + exercises |
 | 04 | Control Flow (incl. `match`/`case`) | 4 + exercises |
 | 05 | Functions (incl. type hints) | 6 + exercises |
-| 06 | Object-Oriented Programming | 7 + exercises |
+| 06 | Object-Oriented Programming | 8 + exercises |
 | 07 | Errors, Debugging, Testing & Professional Workflow | 5 + exercises |
 | 08 | Modules, Packaging & Dependency Management: pip, `pyproject.toml`, **uv**, **Poetry**, wheels, **twine** | 9 |
 | 09 | Advanced Functions | 4 + exercises |
